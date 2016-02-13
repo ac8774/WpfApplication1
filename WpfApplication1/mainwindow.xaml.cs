@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
 using EasyHttp.Http;
 
 namespace WpfApplication1
@@ -29,6 +30,8 @@ namespace WpfApplication1
         List<Guid> u5packages = new List<Guid>();
         List<string> verifiedusers = new List<string>();
 
+        HttpListener listener = new HttpListener();
+
         int currentUser = 1;
 
         public MainWindow()
@@ -39,7 +42,8 @@ namespace WpfApplication1
             InitializeComponent();
             
             http.Request.Accept = HttpContentTypes.ApplicationJson;
-            
+            listener.Start();
+            listener.Prefixes.Add("127.0.0.1:8080");
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -112,7 +116,7 @@ namespace WpfApplication1
             }
         }
 
-        private void PackageUpdatePOST(HttpClient http)
+        private void NewPackageGET(HttpClient http)
         {
             var newpackageuuid = Guid.NewGuid();
             switch (currentUser)
