@@ -34,6 +34,11 @@ namespace WpfApplication1
 
         int currentUser = 1;
 
+        float startlat;
+        float endlat;
+        float startlong;
+        float endlong;
+
         public MainWindow()
         {
 
@@ -142,6 +147,12 @@ namespace WpfApplication1
                     break;
             }
             
+        }
+
+        private void showGMAP(float latstart, float longstart, float latend, float longend)
+        {
+            var link = "https://www.google.com/maps/dir/" + Convert.ToString(latstart) + "," + Convert.ToString(longstart) + "/" + Convert.ToString(latend) + "," + Convert.ToString(longend);
+            WebViewer.Navigate(new Uri(link));
         }
     }
 }

@@ -19,6 +19,6 @@
         
         <TextBlock x:Name="user" HorizontalAlignment="Left" Margin="78,294,0,0" TextWrapping="Wrap" Text="Administrator" VerticalAlignment="Top" TextElement.FontStyle="Italic"/>
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="289" Margin="181,21,0,0" VerticalAlignment="Top" Width="2"/>
-        <WebBrowser HorizontalAlignment="Left" Height="299" Margin="188,21,0,0" VerticalAlignment="Top" Width="329"/>
+        <WebBrowser Name="WebViewer" HorizontalAlignment="Left" Height="299" Margin="188,21,0,0" VerticalAlignment="Top" Width="329"/>
     </Grid>
 </Window>
