@@ -48,7 +48,7 @@ namespace WpfApplication1
             
             http.Request.Accept = HttpContentTypes.ApplicationJson;
             listener.Start();
-            listener.Prefixes.Add("127.0.0.1:8080");
+            listener.Prefixes.Add("http://127.0.0.1:8080/");
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
